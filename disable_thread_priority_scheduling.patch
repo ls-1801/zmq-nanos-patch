@@ -1,0 +1,13 @@
+diff --git a/src/thread.cpp b/src/thread.cpp
+index e013a778..f3c52674 100644
+--- a/src/thread.cpp
++++ b/src/thread.cpp
+@@ -262,7 +262,7 @@ void zmq::thread_t::setSchedulingParameters (
+     _thread_sched_policy = scheduling_policy_;
+     _thread_affinity_cpus = affinity_cpus_;
+ }
+-
++#undef _POSIX_THREAD_PRIORITY_SCHEDULING
+ void zmq::thread_t::
+   applySchedulingParameters () // to be called in secondary thread context
+ {
